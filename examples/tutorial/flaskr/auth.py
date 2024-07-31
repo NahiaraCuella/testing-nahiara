@@ -53,6 +53,7 @@ def register():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
+        email = request.form['email']
         db = get_db()
         error = None
 
@@ -60,6 +61,8 @@ def register():
             error = "Usuario necesario."
         elif not password:
             error = "contraseña requerida"
+        elif not email:
+            error = "Email requerido."    
 
         if error is None:
             try:
