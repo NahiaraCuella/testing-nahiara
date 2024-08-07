@@ -26,8 +26,11 @@ def test_register(client, app):
     (
         ("", "a", "a","Usuario necesario."),
         ("a", "","a", "contraseña requerida"),
-        ("test", "test","test", "esta registrado."),
         ("a", "a", "", "Email requerido."),
+        ("test", "test","test", "esta registrado."),
+        ("fdk","email","test","email esta registrado")
+        
+
     ),
 )
 def test_register_validate_input(client, username, password,email, message):
